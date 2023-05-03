@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=kbc&4=*7+*x!_$#7rw++vu_#v)x7hg(f^^g@ucip&+ys9371y"
+SECRET_KEY = os.environ.get("DJ_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DJ_DEBUG", 0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJ_ALLOWED_HOSTS", "").split()
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "users.apps.UsersConfig",
 ]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASE_URL = os.environ.get("DB_CONNECTION_STRING")
-DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
+# DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
 
 
 # Password validation
@@ -122,3 +123,14 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.CustomUser"
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "URL Shortener API",
+    "DESCRIPTION": "Best URL Shortener API in the world",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
