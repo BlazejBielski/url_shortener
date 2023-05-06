@@ -78,9 +78,8 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASE_URL = os.environ.get("DB_CONNECTION_STRING")
-# DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
-
+DB_CONNECTION_STRING = os.environ.get("DB_CONNECTION_STRING")
+DATABASES = {"default": dj_database_url.config(default=DB_CONNECTION_STRING)}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
