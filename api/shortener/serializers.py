@@ -15,4 +15,4 @@ class URLSerializer(serializers.ModelSerializer):
 class OriginalURLSerializer(serializers.ModelSerializer):
     class Meta:
         model = URL
-        fields = ("original_url")
+        fields = "original_url"
