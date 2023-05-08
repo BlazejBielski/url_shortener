@@ -11,4 +11,4 @@ class URL(models.Model):
 
     class Meta:
         verbose_name = "URL"
-        verbose_plural_name = "urls"
+        verbose_name_plural = "urls"
