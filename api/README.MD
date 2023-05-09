@@ -57,20 +57,33 @@ http://0.0.0.0:8000/api/schema/swagger-ui
 To run this project, you will need to add the following environment variables to your ./envs/api.env file
 
 `DJ_SECRET_KEY=` - Django secrest key for CSRF
+
 `DJ_DEBUG=` - Production development mode 
+
 `DJ_ALLOWED_HOSTS=` - Allowed host for Django
+
 `LOGGING LEVEL=` - Python logging package levels 
 
+
 `DJ_SU_NAME=`  - Default superuser name
+
 `DJ_SU_EMAIL=` - Default superuser email
+
 `DJ_SU_PASSWORD=` - Default superuser password
 
+
 Also variables to your ./envs/postgres.env file
+
 `POSTGRES_USER=` - Potstgres root user
+
 `POSTGRES_PASSWORD=` - Postrges root password
+
 `POSTGRES_DB=` - Database name
-`POSTGRES_HOST=` - Database host - data docker serice name
+
+`POSTGRES_HOST=` - Database host - data docker service name
+
 `POSTGRES_PORT=` - Database port
+
 
 
 ## Running Tests
