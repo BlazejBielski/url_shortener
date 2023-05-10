@@ -12,7 +12,7 @@ A Django URL shortener app is a web application that generates short, customized
 
 ## Demo
 
-[URL Shortener Heroku](https://heroku.com)
+[URL Shortener Heroku](https://desolate-anchorage-51220.herokuapp.com/api/schema/swagger-ui/)
 
 
 ## Tech Stack
@@ -56,7 +56,7 @@ http://0.0.0.0:8000/api/schema/swagger-ui
 
 To run this project, you will need to add the following environment variables to your ./envs/api.env file
 
-`DJ_SECRET_KEY=` - Django secrest key for CSRF
+`DJ_SECRET_KEY=` - Django secret key for CSRF
 
 `DJ_DEBUG=` - Production development mode 
 
