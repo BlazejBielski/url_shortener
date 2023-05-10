@@ -1,5 +1,6 @@
 from typing import Any
 
+from django.shortcuts import redirect
 from django.views.generic import RedirectView
 from rest_framework import generics, status
 from rest_framework.generics import get_object_or_404
