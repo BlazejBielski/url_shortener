@@ -11,6 +11,24 @@ from .serializers import URLSerializer
 
 
 class CreateShortURLApiView(generics.CreateAPIView):
+    """
+    create:
+    Creates a short URL from the provided original URL.
+
+    Expects JSON data in the format:
+    {
+        "url": "http://example.com"
+    }
+
+    Where "url" is the original URL that is to be shortened.
+
+    The response contains the original URL and the shortened URL:
+    {
+        "url": "http://example.com",
+        "short_url": "http://your-domain.com/abcd"
+    }
+    """
+
     queryset = models.URL.objects.all()
     serializer_class = serializers.OriginalURLSerializer
 
@@ -25,6 +43,18 @@ class CreateShortURLApiView(generics.CreateAPIView):
 
 
 class ShortURLRedirectView(RedirectView):
+    """
+    get:
+    Redirects the user to the original URL from the provided short URL.
+
+    Expects the short URL to be part of the path, like:
+    http://your-domain.com/abcd
+
+    Where "abcd" is the short URL.
+
+    The response is a HTTP 302 redirect to the original URL.
+    """
+
     def get_redirect_url(self, *args: Any, short_url: str, **kwargs: Any) -> str | None:
         url = get_object_or_404(models.URL, short_url=short_url)
 
