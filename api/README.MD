@@ -57,11 +57,17 @@ http://0.0.0.0:8000/api/schema/swagger-ui
 
 To run this project, you will need to add the following environment variables to your ./envs/api.env file
 
-<<<<<<< HEAD
-`DJ_SECRET_KEY=` - Django secrest key for CSRF
-=======
 `DJ_SECRET_KEY=` - Django secret key for CSRF
->>>>>>> US-003_readme
+
+Side note - to execute new Django secret key, just run:
+```bash
+docker compose exec api bash
+python manage.py shell
+from django.core.management.utils import get_random_secret_key 
+print(get_random_secret_key())
+```
+and just copy new secret key
+
 
 `DJ_DEBUG=` - Production development mode 
 
