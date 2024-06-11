@@ -108,9 +108,9 @@ To run tests, run the following command
 
 ## Coverage report
 
-How to check coverage level
+How to check coverage level.
 ```bash
-
+  docker compose exec api pytest --cov
 ```
 
 ![Coverage report](https://raw.githubusercontent.com/BlazejBielski/url_shortener/master/screenshots/img_2.png)
