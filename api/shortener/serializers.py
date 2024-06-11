@@ -15,6 +15,7 @@ class URLSerializer(serializers.ModelSerializer):
         fields (tuple): Specifies the fields to include in the serialization.
                         In this case, it includes 'id' and 'short_url'.
     """
+
     class Meta:
         model = URL
         fields = (
@@ -35,6 +36,7 @@ class OriginalURLSerializer(serializers.ModelSerializer):
         fields (str): Specifies the field to include in the serialization.
                       In this case, it includes only 'original_url'.
     """
+
     class Meta:
         model = URL
         fields = ("url",)

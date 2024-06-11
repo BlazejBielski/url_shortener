@@ -27,6 +27,7 @@ class CreateShortURLApiView(generics.CreateAPIView):
                                           and returns the serialized data of the
                                           shortened URL.
     """
+
     queryset = models.URL.objects.all()
     serializer_class = serializers.OriginalURLSerializer
 
@@ -64,6 +65,7 @@ class ShortURLRedirectView(RedirectView):
                                                       for the given shortened URL
                                                       and returns it for redirection.
     """
+
     def get_redirect_url(self, *args: Any, short_url: str, **kwargs: Any) -> str | None:
         """
         Retrieve the original URL for the given shortened URL and return it.
