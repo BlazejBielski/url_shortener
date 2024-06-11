@@ -108,7 +108,12 @@ To run tests, run the following command
 
 ## Coverage report
 
-![Coverage report](https://raw.githubusercontent.com/BlazejBielski/url_shortener/master/screenshots/img.png)
+How to check coverage level
+```bash
+
+```
+
+![Coverage report](https://raw.githubusercontent.com/BlazejBielski/url_shortener/master/screenshots/img_2.png)
 
 
 ## Authors
